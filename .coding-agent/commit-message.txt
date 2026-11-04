@@ -1,0 +1,5 @@
+Add Fax for Agents ChatGPT package
+
+Package the hosted MCP connection with OAuth and a Sandbox setup skill.
+Document approval rules and the current OpenAI format differences.
+Add listing metadata, package validation and CI.
