@@ -52,6 +52,32 @@ The skill is included when the full package is installed.
 
 Disconnect the app at any time from Settings, Connected apps.
 
+## Codex
+
+Add this repository as a marketplace, then install the package:
+
+```bash
+codex plugin marketplace add faxforagents/chatgpt-plugin
+codex plugin add fax-for-agents@fax-for-agents
+```
+
+The Git commands use the published repository. They need a revision containing this catalog.
+To test a local checkout, run `codex plugin marketplace add .` from its root, then the same `codex plugin add` command.
+Restart the ChatGPT desktop app, select **Fax for Agents** in the Plugins Directory, and connect your account through OAuth.
+Run the setup skill in a new conversation and choose Sandbox first.
+
+The [OpenAI package guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli) documents marketplace registration and desktop testing.
+The [OpenAI Codex evaluation example](https://developers.openai.com/cookbook/examples/partners/harness_aware_plugin_evals/harness_aware_plugin_evals#running-the-example) uses `codex plugin add` to install a plugin.
+
+[.agents/plugins/marketplace.json](.agents/plugins/marketplace.json) points to `./`, resolved from this repository's root.
+It exposes the existing `fax-for-agents` package with authentication on installation.
+Its marketplace name is also `fax-for-agents`, which explains the two names in the install command.
+
+Codex uses the root `plugin.json`, `mcp.json` and `skills/` layout.
+OpenAI ignores `.codex-plugin/plugin.json` settings when the root manifest contains `extensions.com.openai`.
+The [manifest reference](https://developers.openai.com/plugins/deploy/submission#manifest-fields) documents this precedence, so this package has no fallback manifest.
+ChatGPT and Codex share one public directory listing. This Git catalog does not create another public submission.
+
 ## Authentication
 
 The server supports OAuth 2.1 and API keys as bearer tokens.
@@ -120,7 +146,9 @@ Run the validator with Python 3 installed:
 sh scripts/validate.sh
 ```
 
-It checks JSON syntax, required fields, listing values, authentication settings and referenced files.
+It checks JSON syntax, required fields, listing values and limits, authentication settings, review metadata and referenced files.
+When the optional Codex catalog is present, it checks its package path, identity and installation policies.
+Without the catalog, it reports that only the portable package was checked.
 CI runs the same command on pushes to main and pull requests.
 It also supports manual runs.
 It uses the sibling package's read-only permissions, pinned checkout and cancellation of superseded runs.

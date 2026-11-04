@@ -1,0 +1,20 @@
+{
+  "name": "fax-for-agents",
+  "interface": {
+    "displayName": "Fax for Agents"
+  },
+  "plugins": [
+    {
+      "name": "fax-for-agents",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
