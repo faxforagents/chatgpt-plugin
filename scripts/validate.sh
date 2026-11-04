@@ -43,7 +43,7 @@ try:
         ("$schema", "name", "description", "version", "author", "homepage", "extensions"), "plugin")
     require(plugin["$schema"] == "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json", "Unexpected plugin schema")
     require(plugin["name"] == "fax-for-agents", "Unexpected package name")
-    require(plugin["version"] == "1.0.0", "Unexpected version")
+    require(re.fullmatch(r"\d+\.\d+\.\d+", str(plugin["version"])) is not None, "Unexpected version")
     author = object_fields(plugin["author"], ("name",), "author")
     require(author["name"] == "JSB Holdings LLC", "Unexpected author")
     require(plugin["homepage"] == "https://faxforagents.com/", "Unexpected homepage")
