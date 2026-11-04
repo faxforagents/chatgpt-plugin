@@ -3,6 +3,4 @@
 .env.*
 __pycache__/
 *.pyc
-.coding-agent/*
-!.coding-agent/summary.md
-!.coding-agent/commit-message.txt
+.coding-agent/
