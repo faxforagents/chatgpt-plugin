@@ -32,6 +32,15 @@ The [setup skill](skills/setup/SKILL.md) guides the first Sandbox fax.
 
 ## Install in ChatGPT
 
+The short way is one paste. Put this line into ChatGPT and it connects the server, signs you in through
+the browser and sends a first sandbox fax.
+
+```
+Read https://faxforagents.com/setup.md and connect Fax for Agents to this chat for me. Start in Sandbox.
+```
+
+The steps it follows are below.
+
 Open the [Plugins Directory](https://chatgpt.com/plugins) and search for **Fax for Agents**.
 If the listing is available, install it and connect your account.
 This repository does not establish directory publication.
