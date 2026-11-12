@@ -20,7 +20,7 @@
 <p align="center">
   <a href="https://github.com/faxforagents/chatgpt-plugin/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/faxforagents/chatgpt-plugin/ci.yml?branch=main&label=ci" alt="CI"></a>
   <a href="https://github.com/faxforagents/chatgpt-plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/licence-MIT-1f6feb" alt="MIT licence"></a>
-  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-15%20tools-6b4fbb" alt="MCP"></a>
+  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-17%20tools-6b4fbb" alt="MCP"></a>
 </p>
 
 Fax for Agents is a fax API, a hosted MCP server and SDKs built so AI agents can send and receive faxes.
@@ -121,6 +121,8 @@ Never paste keys or tokens into chat or package files.
 | `list_faxes` | List faxes. |
 | `get_fax_balance` | Read the account balance. |
 | `cancel_fax` | Request fax cancellation. |
+| `request_card_payment` | Ask a person to pay for one quoted fax by card. |
+| `get_card_payment_status` | Read a card payment order. |
 | `request_human_review` | Request human review. |
 | `get_review_status` | Read the review status. |
 | `list_inbox` | List received faxes. |
