@@ -30,15 +30,15 @@ It is made by JSB Holdings LLC.
 This repository packages the hosted server connection and a setup skill for ChatGPT.
 [plugin.json](plugin.json) holds the package and listing metadata.
 [mcp.json](mcp.json) connects to the hosted server over Streamable HTTP.
-The [setup skill](skills/setup/SKILL.md) guides the first Sandbox fax.
+The [setup skill](skills/setup/SKILL.md) guides the first fax in test mode.
 
 ## Install in ChatGPT
 
 The short way is one paste. Put this line into ChatGPT and it connects the server, signs you in through
-the browser and sends a first sandbox fax.
+the browser and sends a first fax in test mode.
 
 ```
-Read https://faxforagents.com/setup.md and connect Fax for Agents to this chat for me. Start in Sandbox.
+Read https://faxforagents.com/setup.md and connect Fax for Agents to this chat for me. Start in test mode.
 ```
 
 The steps it follows are below.
@@ -53,7 +53,7 @@ To connect the server directly:
 2. Select **Add custom MCP server** and enter `https://mcp.faxforagents.com/mcp`.
 3. Choose OAuth and complete the connection form. Review the requested permissions and the connection warning.
 4. Select **Create as a plugin** and complete account authorization.
-5. Choose Sandbox first. Prepare a document, review its quote and send within the permissions you approve.
+5. Choose test mode first. Prepare a document, review its quote and send within the permissions you approve.
 6. Read the returned status and provider evidence afterward.
 
 The current [OpenAI package guide](https://developers.openai.com/plugins/build/plugins) calls this **Add custom MCP server**, followed by **Create as a plugin**.
@@ -75,7 +75,7 @@ codex plugin add fax-for-agents@fax-for-agents
 The Git commands use the published repository. They need a revision containing this catalog.
 To test a local checkout, run `codex plugin marketplace add .` from its root, then the same `codex plugin add` command.
 Restart the ChatGPT desktop app, select **Fax for Agents** in the Plugins Directory, and connect your account through OAuth.
-Run the setup skill in a new conversation and choose Sandbox first.
+Run the setup skill in a new conversation and choose test mode first.
 
 The [OpenAI package guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli) documents marketplace registration and desktop testing.
 The [OpenAI Codex evaluation example](https://developers.openai.com/cookbook/examples/partners/harness_aware_plugin_evals/harness_aware_plugin_evals#running-the-example) uses `codex plugin add` to install a plugin.

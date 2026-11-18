@@ -1,6 +1,6 @@
 ---
 name: setup
-description: Set up Fax for Agents and guide a first Sandbox fax through preparation, review, approval, sending and status checks.
+description: Set up Fax for Agents and guide a first fax in test mode through preparation, review, approval, sending and status checks.
 ---
 
 # Set up Fax for Agents
@@ -8,7 +8,7 @@ description: Set up Fax for Agents and guide a first Sandbox fax through prepara
 Use this skill when the user connects Fax for Agents or asks for help with a first fax.
 
 1. Connect to `https://mcp.faxforagents.com/mcp` through ChatGPT's connection flow. Use OAuth and review the requested permissions. Never ask for credentials in chat.
-2. Choose Sandbox first. Call `get_guide` and `get_fax_capabilities` for current instructions and supported actions. Confirm the active environment before preparing a fax. Ask before switching to Live.
+2. Choose test mode first. Call `get_guide` and `get_fax_capabilities` for current instructions and supported actions. Confirm the active environment before preparing a fax. Ask before switching to live.
 3. Confirm the user's intended recipient and document. Use `prepare_fax`, then `get_fax_document` to review the prepared document with the user.
 4. Call `quote_fax` for that document and recipient. Show the returned quote and any permission requirements. Stop if the requested action is unavailable.
 5. A live send requires an approval or a policy that allows it. Use `request_human_review` and `get_review_status` when human approval is needed. Never treat a pending or denied review as approval. If the recipient, document or environment changes, prepare and review a new quote.
