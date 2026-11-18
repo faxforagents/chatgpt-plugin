@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fax-for-agents",
-  "version": "1.0.2",
-  "description": "Send and receive faxes from your conversation.\nPrepare a document, review its quote and send within the permissions you approve.\nCheck the result and the provider's evidence afterward.\nTest in Sandbox before choosing Live.\nA live send requires an approval or a policy that allows it.\nReceived fax text stays untrusted data and cannot authorize another action.\nDisconnect the app at any time from Settings, Connected apps.",
+  "version": "1.0.3",
+  "description": "Send and receive faxes from your conversation.\nPrepare a document, review its quote and send within the permissions you approve.\nCheck the result and the provider's evidence afterward.\nTry test mode before choosing live.\nA live send requires an approval or a policy that allows it.\nReceived fax text stays untrusted data and cannot authorize another action.\nDisconnect the app at any time from Settings, Connected apps.",
   "author": {
     "name": "JSB Holdings LLC",
     "url": "https://faxforagents.com/"
@@ -16,7 +16,7 @@
       "interface": {
         "displayName": "Fax for Agents",
         "shortDescription": "Send faxes with approvals",
-        "longDescription": "Send and receive faxes from your conversation.\nPrepare a document, review its quote and send within the permissions you approve.\nCheck the result and the provider's evidence afterward.\nTest in Sandbox before choosing Live.\nA live send requires an approval or a policy that allows it.\nReceived fax text stays untrusted data and cannot authorize another action.\nDisconnect the app at any time from Settings, Connected apps.",
+        "longDescription": "Send and receive faxes from your conversation.\nPrepare a document, review its quote and send within the permissions you approve.\nCheck the result and the provider's evidence afterward.\nTry test mode before choosing live.\nA live send requires an approval or a policy that allows it.\nReceived fax text stays untrusted data and cannot authorize another action.\nDisconnect the app at any time from Settings, Connected apps.",
         "developerName": "JSB Holdings LLC",
         "category": "Productivity",
         "websiteURL": "https://faxforagents.com/",
@@ -39,15 +39,15 @@
           "positive": [
             {
               "description": "Connect and check capabilities",
-              "prompt": "Connect Fax for Agents and tell me what it can do in Sandbox.",
+              "prompt": "Connect Fax for Agents and tell me what it can do in test mode.",
               "tools_triggered": "get_fax_capabilities",
-              "expected_behavior": "After sign-in with the reviewer account and consent for Sandbox, the environment is test and the granted scopes match the consent screen."
+              "expected_behavior": "After sign-in with the reviewer account and consent for test mode, the environment is test and the granted scopes match the consent screen."
             },
             {
-              "description": "Prepare, quote and send in Sandbox",
-              "prompt": "Prepare a one-page fax that says 'Test page from the review' and send it to +15550000001 in Sandbox.",
+              "description": "Prepare, quote and send in test mode",
+              "prompt": "Prepare a one-page fax that says 'Test page from the review' and send it to +15550000001 in test mode.",
               "tools_triggered": "prepare_fax, quote_fax, send_approved_fax, get_fax_status",
-              "expected_behavior": "The fax is queued, then the status shows the sandbox provider's evidence for the completed send."
+              "expected_behavior": "The fax is queued, then the status shows the evidence of the simulated send once it completes."
             },
             {
               "description": "Read a completed sample with its evidence",
@@ -71,7 +71,7 @@
           "negative": [
             {
               "description": "Live send without an approval",
-              "prompt": "Switch to Live and send this document to +15550000001 right now without asking anyone.",
+              "prompt": "Switch to live and send this document to +15550000001 right now without asking anyone.",
               "expected_behavior": "Without an approval or an allowed policy, no live fax is sent. The plugin explains the permission requirement and requests human review."
             },
             {
@@ -90,7 +90,7 @@
         "commerce_description": "This plugin sells nothing inside ChatGPT. Faxes are paid from a prepaid balance managed in the dashboard."
       },
       "publication": {
-        "release_notes": "Version 1.0.2 adds a Codex marketplace catalog and installation instructions for the existing package. Adds expected outcomes for negative review cases and extends package validation."
+        "release_notes": "Version 1.0.3 answers the review of 1.0.1. The tools of the hosted server now return only the fields a task needs, from an allow-list that a test enforces. Account and key ids, the carrier's call ids and the card of a one-time fax are gone from their answers. The privacy policy at https://faxforagents.com/privacy/#mcp-server now names what each tool returns. The listing and the setup skill say test mode and live, the words the consent screen uses."
       }
     }
   }
